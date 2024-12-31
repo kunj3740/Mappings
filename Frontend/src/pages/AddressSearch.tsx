@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Loader2, MapPin, Plus, Search } from 'lucide-react'
+import { Loader2, Plus, Search } from 'lucide-react'
 import { Map } from '../components/Map'
 import { AddressForm } from '../components/AddressForm'
 import { AddressList } from '../components/AddressList'
@@ -21,7 +20,6 @@ export const AddressSearch = () => {
   const [selectedLocation, setSelectedLocation] = useState<google.maps.LatLngLiteral | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [darkMode, setDarkMode] = useState(false)
-  const navigate = useNavigate()
 
   useEffect(() => {
     loadAddresses()
@@ -97,7 +95,7 @@ export const AddressSearch = () => {
           isDefault: false
         }
 
-        const createdAddress = await addressService.createAddress(newAddress)
+        await addressService.createAddress(newAddress)
         toast.success('Address saved successfully')
         loadAddresses()
       } else {

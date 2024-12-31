@@ -11,7 +11,7 @@ export const LocationModal = ({ isOpen, onClose }: LocationModalProps) => {
   const handleEnableLocation = async () => {
     try {
       await navigator.geolocation.getCurrentPosition(
-        (position) => {
+        () => {
           // Handle success
           onClose();
         },

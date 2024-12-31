@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { MapPin, Edit, Trash2, Star } from 'lucide-react';
+import { MapPin,  Trash2, Star } from 'lucide-react';
 import { Address } from '../types/address';
 import { addressService } from '../services/addressService';
 import { Button } from '@/components/ui/button';
